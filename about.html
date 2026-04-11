@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>关于我 — Caleb's Space</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/pro.css" />
+  <style>
+    .about-page { padding: 140px 0 100px; }
+    .about-page .container { max-width: 860px; }
+    .about-avatar {
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--pro-light), var(--brand-light));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 3.5rem;
+      margin-bottom: 32px;
+      box-shadow: 0 0 0 6px var(--surface), 0 0 0 8px var(--pro-light);
+    }
+    .about-name {
+      font-family: var(--font-serif);
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+    .about-role {
+      font-size: 1rem;
+      color: var(--pro);
+      font-weight: 600;
+      letter-spacing: .05em;
+      margin-bottom: 32px;
+    }
+    .about-bio {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 2;
+      max-width: 640px;
+      margin-bottom: 20px;
+    }
+    .timeline {
+      margin-top: 60px;
+    }
+    .timeline-title {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 32px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--divider);
+    }
+    .timeline-item {
+      display: flex;
+      gap: 24px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--divider);
+    }
+    .timeline-dot {
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      background: var(--pro);
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+    .timeline-year {
+      font-size: .8rem;
+      font-weight: 700;
+      color: var(--pro);
+      min-width: 48px;
+      padding-top: 4px;
+    }
+    .timeline-content h4 {
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+    .timeline-content p {
+      font-size: .88rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+    .contact-section {
+      margin-top: 60px;
+      padding: 40px;
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      border: 1.5px solid var(--divider);
+    }
+    .contact-title {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+    .contact-desc {
+      font-size: .9rem;
+      color: var(--text-secondary);
+      line-height: 1.85;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header" id="site-header">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">🧬</span>
+        <span class="logo-text">Caleb's Space</span>
+      </a>
+      <nav class="main-nav" id="main-nav">
+        <a href="life.html"         class="nav-link nav-life">日常生活</a>
+        <a href="travel.html"       class="nav-link nav-travel">旅行探索</a>
+        <a href="professional.html" class="nav-link nav-pro">专业思考</a>
+        <a href="thinking.html"     class="nav-link nav-think">思维提升</a>
+        <a href="about.html"        class="nav-link nav-about">关于我</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <section class="about-page">
+    <div class="container">
+      <div class="about-avatar">🧬</div>
+      <h1 class="about-name">Caleb</h1>
+      <p class="about-role">细胞培养工程师 · 生物制药 · 记录者</p>
+
+      <p class="about-bio">
+        你好，我是 Caleb。即将入职一家生物制药企业的生产部门，担任细胞培养工程师。
+        我在细胞的世界里工作——让微小的生命为人类的健康服务，这件事让我觉得很有意义。
+      </p>
+      <p class="about-bio">
+        这个博客诞生于我即将踏入职场的节点。我想为自己保留一个真实的表达出口：
+        记录日常，分享旅途，沉淀专业思考，也探索更广阔的思想边界。
+      </p>
+      <p class="about-bio">
+        我相信，一个好的工程师不只需要懂技术——还需要有人文视角、有跨界能力、有持续成长的习惯。
+        这里是我实践这一信念的地方。
+      </p>
+
+      <div class="skill-grid">
+        <span class="skill-tag">🔬 细胞培养工艺</span>
+        <span class="skill-tag">🏭 GMP 生产合规</span>
+        <span class="skill-tag">🧪 生物反应器操作</span>
+        <span class="skill-tag">📊 数据分析</span>
+        <span class="skill-tag">✍️ 内容创作</span>
+        <span class="skill-tag">🌏 旅行探索</span>
+      </div>
+
+      <!-- Timeline -->
+      <div class="timeline reveal">
+        <h2 class="timeline-title">成长轨迹</h2>
+
+        <div class="timeline-item">
+          <div class="timeline-dot" style="background:var(--brand)"></div>
+          <div class="timeline-year">2026.05</div>
+          <div class="timeline-content">
+            <h4>入职生物制药企业 · 细胞培养工程师</h4>
+            <p>正式进入工业化生产体系，从实验室走向 GMP 车间，开启新的职业阶段。</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot" style="background:var(--pro)"></div>
+          <div class="timeline-year">2026.04</div>
+          <div class="timeline-content">
+            <h4>创建 Caleb's Space 博客</h4>
+            <p>在入职前建立这个博客，作为记录成长、沉淀思考的长期平台。</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot" style="background:var(--travel)"></div>
+          <div class="timeline-year">待填写</div>
+          <div class="timeline-content">
+            <h4>教育背景</h4>
+            <p>生命科学相关专业背景，专注于细胞生物学与生物制药方向。</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Contact -->
+      <div class="contact-section reveal">
+        <h3 class="contact-title">联系我</h3>
+        <p class="contact-desc">
+          如果你是生物制药行业的从业者、在校学生，或者只是对这个博客感兴趣，
+          都欢迎与我交流。我对行业讨论、内容合作都保持开放的态度。
+        </p>
+        <div class="skill-grid">
+          <span class="skill-tag">📧 邮件联系</span>
+          <span class="skill-tag">💬 微信交流</span>
+        </div>
+        <p style="font-size:.82rem; color:var(--text-secondary); margin-top:14px; opacity:.7;">
+          联系方式即将更新
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-icon">🧬</span><span class="logo-text">Caleb's Space</span>
+      </div>
+      <p class="footer-desc">生命科学 × 人文探索 · 用文字记录成长的轨迹</p>
+      <div class="footer-links">
+        <a href="life.html">日常生活</a><a href="travel.html">旅行探索</a>
+        <a href="professional.html">专业思考</a><a href="thinking.html">思维提升</a>
+        <a href="about.html">关于我</a>
+      </div>
+      <p class="footer-copy">© 2026 Caleb's Space · All rights reserved</p>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>
