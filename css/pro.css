@@ -1,0 +1,92 @@
+/* ============================================================
+   PROFESSIONAL PAGE — Extra Styles
+   ============================================================ */
+
+/* Lab-style data card */
+.data-card {
+  background: var(--surface);
+  border: 1.5px solid var(--pro-light);
+  border-radius: var(--radius-lg);
+  padding: 28px 32px;
+  position: relative;
+  overflow: hidden;
+}
+.data-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(to right, var(--pro), #A5D6A7);
+}
+
+/* Code block */
+.code-block {
+  background: var(--pro-light);
+  border: 1px solid #A5D6A7;
+  border-left: 4px solid var(--pro);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 16px 20px;
+  font-family: "Cascadia Code", "Fira Code", "Consolas", monospace;
+  font-size: .85rem;
+  color: var(--pro-dark);
+  overflow-x: auto;
+  white-space: pre;
+}
+
+/* Skill tags */
+.skill-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+.skill-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 14px;
+  border-radius: 99px;
+  font-size: .82rem;
+  font-weight: 600;
+  background: var(--pro-light);
+  color: var(--pro-dark);
+  border: 1px solid #A5D6A7;
+}
+
+/* Article content styles */
+.article-body {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 60px 24px 100px;
+}
+.article-body h2 {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  color: var(--text-primary);
+  margin: 40px 0 16px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--pro-light);
+}
+.article-body h2::before {
+  content: '';
+  display: inline-block;
+  width: 4px; height: 1.2em;
+  background: var(--pro);
+  border-radius: 2px;
+  margin-right: 10px;
+  vertical-align: middle;
+  margin-top: -3px;
+}
+.article-body p {
+  font-size: 1rem;
+  color: var(--text-primary);
+  line-height: 2;
+  margin-bottom: 18px;
+}
+.article-body .highlight {
+  background: var(--pro-light);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--pro-dark);
+  font-weight: 600;
+}
