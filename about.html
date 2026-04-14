@@ -10,100 +10,39 @@
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/pro.css" />
   <style>
+    #lang-toggle {
+      display: inline-flex; align-items: center;
+      padding: 4px 12px; border: 1.5px solid var(--brand);
+      border-radius: 20px; font-size: .82rem; font-weight: 600;
+      color: var(--brand); background: transparent; cursor: pointer;
+      transition: background .2s, color .2s; margin-left: 8px;
+      white-space: nowrap; flex-shrink: 0;
+    }
+    #lang-toggle:hover { background: var(--brand); color: #fff; }
+    .footer-stats { font-size: .78rem; color: var(--text-tertiary, #78909C); margin: 6px 0 0; opacity: .85; }
+    .footer-stats span { margin: 0 6px; }
     .about-page { padding: 140px 0 100px; }
     .about-page .container { max-width: 860px; }
     .about-avatar {
-      width: 120px; height: 120px;
-      border-radius: 50%;
+      width: 120px; height: 120px; border-radius: 50%;
       background: linear-gradient(135deg, var(--pro-light), var(--brand-light));
       display: flex; align-items: center; justify-content: center;
-      font-size: 3.5rem;
-      margin-bottom: 32px;
+      font-size: 3.5rem; margin-bottom: 32px;
       box-shadow: 0 0 0 6px var(--surface), 0 0 0 8px var(--pro-light);
     }
-    .about-name {
-      font-family: var(--font-serif);
-      font-size: 2.4rem;
-      font-weight: 700;
-      color: var(--text-primary);
-      margin-bottom: 6px;
-    }
-    .about-role {
-      font-size: 1rem;
-      color: var(--pro);
-      font-weight: 600;
-      letter-spacing: .05em;
-      margin-bottom: 32px;
-    }
-    .about-bio {
-      font-size: 1rem;
-      color: var(--text-secondary);
-      line-height: 2;
-      max-width: 640px;
-      margin-bottom: 20px;
-    }
-    .timeline {
-      margin-top: 60px;
-    }
-    .timeline-title {
-      font-family: var(--font-serif);
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--text-primary);
-      margin-bottom: 32px;
-      padding-bottom: 12px;
-      border-bottom: 2px solid var(--divider);
-    }
-    .timeline-item {
-      display: flex;
-      gap: 24px;
-      padding: 20px 0;
-      border-bottom: 1px solid var(--divider);
-    }
-    .timeline-dot {
-      width: 12px; height: 12px;
-      border-radius: 50%;
-      background: var(--pro);
-      flex-shrink: 0;
-      margin-top: 7px;
-    }
-    .timeline-year {
-      font-size: .8rem;
-      font-weight: 700;
-      color: var(--pro);
-      min-width: 48px;
-      padding-top: 4px;
-    }
-    .timeline-content h4 {
-      font-weight: 600;
-      color: var(--text-primary);
-      margin-bottom: 4px;
-    }
-    .timeline-content p {
-      font-size: .88rem;
-      color: var(--text-secondary);
-      line-height: 1.7;
-    }
-    .contact-section {
-      margin-top: 60px;
-      padding: 40px;
-      background: var(--surface);
-      border-radius: var(--radius-lg);
-      border: 1.5px solid var(--divider);
-    }
-    .contact-title {
-      font-family: var(--font-serif);
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--text-primary);
-      margin-bottom: 16px;
-    }
-    .contact-desc {
-      font-size: .9rem;
-      color: var(--text-secondary);
-      line-height: 1.85;
-      margin-bottom: 20px;
-    }
+    .about-name { font-family: var(--font-serif); font-size: 2.4rem; font-weight: 700; color: var(--text-primary); margin-bottom: 6px; }
+    .about-role { font-size: 1rem; color: var(--pro); font-weight: 600; letter-spacing: .05em; margin-bottom: 32px; }
+    .about-bio { font-size: 1rem; color: var(--text-secondary); line-height: 2; max-width: 640px; margin-bottom: 20px; }
+    .timeline { margin-top: 60px; }
+    .timeline-title { font-family: var(--font-serif); font-size: 1.4rem; font-weight: 700; color: var(--text-primary); margin-bottom: 32px; padding-bottom: 12px; border-bottom: 2px solid var(--divider); }
+    .timeline-item { display: flex; gap: 24px; padding: 20px 0; border-bottom: 1px solid var(--divider); }
+    .timeline-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--pro); flex-shrink: 0; margin-top: 7px; }
+    .timeline-year { font-size: .8rem; font-weight: 700; color: var(--pro); min-width: 48px; padding-top: 4px; }
+    .timeline-content h4 { font-weight: 600; color: var(--text-primary); margin-bottom: 4px; }
+    .timeline-content p { font-size: .88rem; color: var(--text-secondary); line-height: 1.7; }
+    .contact-section { margin-top: 60px; padding: 40px; background: var(--surface); border-radius: var(--radius-lg); border: 1.5px solid var(--divider); }
+    .contact-title { font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700; color: var(--text-primary); margin-bottom: 16px; }
+    .contact-desc { font-size: .9rem; color: var(--text-secondary); line-height: 1.85; margin-bottom: 20px; }
   </style>
 </head>
 <body>
@@ -115,12 +54,13 @@
         <span class="logo-text">Caleb's Space</span>
       </a>
       <nav class="main-nav" id="main-nav">
-        <a href="life.html"         class="nav-link nav-life">日常生活</a>
-        <a href="travel.html"       class="nav-link nav-travel">旅行探索</a>
-        <a href="professional.html" class="nav-link nav-pro">专业思考</a>
-        <a href="thinking.html"     class="nav-link nav-think">思维提升</a>
-        <a href="about.html"        class="nav-link nav-about">关于我</a>
+        <a href="life.html"         class="nav-link nav-life"   data-zh="日常生活" data-en="Daily Life">日常生活</a>
+        <a href="travel.html"       class="nav-link nav-travel" data-zh="旅行探索" data-en="Travel">旅行探索</a>
+        <a href="professional.html" class="nav-link nav-pro"    data-zh="专业思考" data-en="Professional">专业思考</a>
+        <a href="thinking.html"     class="nav-link nav-think"  data-zh="思维提升" data-en="Thinking">思维提升</a>
+        <a href="about.html"        class="nav-link nav-about"  data-zh="关于我"   data-en="About">关于我</a>
       </nav>
+      <button id="lang-toggle" title="Switch to English" aria-label="切换语言">EN</button>
       <button class="hamburger" id="hamburger" aria-label="菜单">
         <span></span><span></span><span></span>
       </button>
@@ -131,40 +71,53 @@
     <div class="container">
       <div class="about-avatar">🧬</div>
       <h1 class="about-name">Caleb</h1>
-      <p class="about-role">细胞培养工程师 · 生物制药 · 记录者</p>
+      <p class="about-role"
+         data-zh="细胞培养工程师 · 生物制药 · 记录者"
+         data-en="Cell Culture Engineer · Biopharma · Creator">细胞培养工程师 · 生物制药 · 记录者</p>
 
-      <p class="about-bio">
+      <p class="about-bio"
+         data-zh="你好，我是 Caleb。即将入职一家生物制药企业的生产部门，担任细胞培养工程师。我在细胞的世界里工作——让微小的生命为人类的健康服务，这件事让我觉得很有意义。"
+         data-en="Hi, I'm Caleb. About to join the manufacturing department of a biopharma company as a Cell Culture Engineer. I work in the world of cells — helping tiny forms of life serve human health. I find that deeply meaningful.">
         你好，我是 Caleb。即将入职一家生物制药企业的生产部门，担任细胞培养工程师。
         我在细胞的世界里工作——让微小的生命为人类的健康服务，这件事让我觉得很有意义。
       </p>
-      <p class="about-bio">
+      <p class="about-bio"
+         data-zh="这个博客诞生于我即将踏入职场的节点。我想为自己保留一个真实的表达出口：记录日常，分享旅途，沉淀专业思考，也探索更广阔的思想边界。"
+         data-en="This blog was born at the moment I was about to enter the workforce. I wanted to keep a genuine channel of expression: documenting daily life, sharing journeys, distilling professional thinking, and exploring the wider landscape of ideas.">
         这个博客诞生于我即将踏入职场的节点。我想为自己保留一个真实的表达出口：
         记录日常，分享旅途，沉淀专业思考，也探索更广阔的思想边界。
       </p>
-      <p class="about-bio">
+      <p class="about-bio"
+         data-zh="我相信，一个好的工程师不只需要懂技术——还需要有人文视角、有跨界能力、有持续成长的习惯。这里是我实践这一信念的地方。"
+         data-en="I believe a good engineer needs more than technical knowledge — they need a humanistic perspective, cross-domain ability, and a habit of continuous growth. This is where I practise that belief.">
         我相信，一个好的工程师不只需要懂技术——还需要有人文视角、有跨界能力、有持续成长的习惯。
         这里是我实践这一信念的地方。
       </p>
 
       <div class="skill-grid">
-        <span class="skill-tag">🔬 细胞培养工艺</span>
-        <span class="skill-tag">🏭 GMP 生产合规</span>
-        <span class="skill-tag">🧪 生物反应器操作</span>
-        <span class="skill-tag">📊 数据分析</span>
-        <span class="skill-tag">✍️ 内容创作</span>
-        <span class="skill-tag">🌏 旅行探索</span>
+        <span class="skill-tag">🔬 <span data-zh="细胞培养工艺" data-en="Cell Culture Process">细胞培养工艺</span></span>
+        <span class="skill-tag">🏭 <span data-zh="GMP 生产合规" data-en="GMP Compliance">GMP 生产合规</span></span>
+        <span class="skill-tag">🧪 <span data-zh="生物反应器操作" data-en="Bioreactor Operation">生物反应器操作</span></span>
+        <span class="skill-tag">📊 <span data-zh="数据分析" data-en="Data Analysis">数据分析</span></span>
+        <span class="skill-tag">✍️ <span data-zh="内容创作" data-en="Content Creation">内容创作</span></span>
+        <span class="skill-tag">🌏 <span data-zh="旅行探索" data-en="Travel & Exploration">旅行探索</span></span>
       </div>
 
       <!-- Timeline -->
       <div class="timeline reveal">
-        <h2 class="timeline-title">成长轨迹</h2>
+        <h2 class="timeline-title"
+            data-zh="成长轨迹" data-en="Growth Timeline">成长轨迹</h2>
 
         <div class="timeline-item">
           <div class="timeline-dot" style="background:var(--brand)"></div>
           <div class="timeline-year">2026.05</div>
           <div class="timeline-content">
-            <h4>入职生物制药企业 · 细胞培养工程师</h4>
-            <p>正式进入工业化生产体系，从实验室走向 GMP 车间，开启新的职业阶段。</p>
+            <h4 data-zh="入职生物制药企业 · 细胞培养工程师"
+                data-en="Joined Biopharma Company · Cell Culture Engineer">
+              入职生物制药企业 · 细胞培养工程师</h4>
+            <p data-zh="正式进入工业化生产体系，从实验室走向 GMP 车间，开启新的职业阶段。"
+               data-en="Officially entering the industrial production system, moving from the lab to a GMP facility — a new career chapter begins.">
+              正式进入工业化生产体系，从实验室走向 GMP 车间，开启新的职业阶段。</p>
           </div>
         </div>
 
@@ -172,17 +125,23 @@
           <div class="timeline-dot" style="background:var(--pro)"></div>
           <div class="timeline-year">2026.04</div>
           <div class="timeline-content">
-            <h4>创建 Caleb's Space 博客</h4>
-            <p>在入职前建立这个博客，作为记录成长、沉淀思考的长期平台。</p>
+            <h4 data-zh="创建 Caleb's Space 博客"
+                data-en="Created Caleb's Space Blog">
+              创建 Caleb's Space 博客</h4>
+            <p data-zh="在入职前建立这个博客，作为记录成长、沉淀思考的长期平台。"
+               data-en="Built this blog before starting work, as a long-term platform for recording growth and distilling thoughts.">
+              在入职前建立这个博客，作为记录成长、沉淀思考的长期平台。</p>
           </div>
         </div>
 
         <div class="timeline-item">
           <div class="timeline-dot" style="background:var(--travel)"></div>
-          <div class="timeline-year">待填写</div>
+          <div class="timeline-year" data-zh="待填写" data-en="TBD">待填写</div>
           <div class="timeline-content">
-            <h4>教育背景</h4>
-            <p>生命科学相关专业背景，专注于细胞生物学与生物制药方向。</p>
+            <h4 data-zh="教育背景" data-en="Education">教育背景</h4>
+            <p data-zh="生命科学相关专业背景，专注于细胞生物学与生物制药方向。"
+               data-en="Life science background, focused on cell biology and biopharmaceuticals.">
+              生命科学相关专业背景，专注于细胞生物学与生物制药方向。</p>
           </div>
         </div>
 
@@ -190,16 +149,21 @@
 
       <!-- Contact -->
       <div class="contact-section reveal">
-        <h3 class="contact-title">联系我</h3>
-        <p class="contact-desc">
+        <h3 class="contact-title"
+            data-zh="联系我" data-en="Get In Touch">联系我</h3>
+        <p class="contact-desc"
+           data-zh="如果你是生物制药行业的从业者、在校学生，或者只是对这个博客感兴趣，都欢迎与我交流。我对行业讨论、内容合作都保持开放的态度。"
+           data-en="Whether you're a biopharma professional, a student, or simply interested in this blog — feel free to reach out. I'm open to industry discussions and content collaboration.">
           如果你是生物制药行业的从业者、在校学生，或者只是对这个博客感兴趣，
           都欢迎与我交流。我对行业讨论、内容合作都保持开放的态度。
         </p>
         <div class="skill-grid">
-          <span class="skill-tag">📧 邮件联系</span>
-          <span class="skill-tag">💬 微信交流</span>
+          <span class="skill-tag">📧 <span data-zh="邮件联系" data-en="Email">邮件联系</span></span>
+          <span class="skill-tag">💬 <span data-zh="微信交流" data-en="WeChat">微信交流</span></span>
         </div>
-        <p style="font-size:.82rem; color:var(--text-secondary); margin-top:14px; opacity:.7;">
+        <p style="font-size:.82rem; color:var(--text-secondary); margin-top:14px; opacity:.7;"
+           data-zh="联系方式即将更新"
+           data-en="Contact details coming soon">
           联系方式即将更新
         </p>
       </div>
@@ -212,15 +176,30 @@
       <div class="footer-brand">
         <span class="logo-icon">🧬</span><span class="logo-text">Caleb's Space</span>
       </div>
-      <p class="footer-desc">生命科学 × 人文探索 · 用文字记录成长的轨迹</p>
+      <p class="footer-desc"
+         data-zh="生命科学 × 人文探索 · 用文字记录成长的轨迹"
+         data-en="Life Science × Humanities · Documenting Growth Through Writing">
+        生命科学 × 人文探索 · 用文字记录成长的轨迹</p>
       <div class="footer-links">
-        <a href="life.html">日常生活</a><a href="travel.html">旅行探索</a>
-        <a href="professional.html">专业思考</a><a href="thinking.html">思维提升</a>
-        <a href="about.html">关于我</a>
+        <a href="life.html"         data-zh="日常生活"  data-en="Daily Life">日常生活</a>
+        <a href="travel.html"       data-zh="旅行探索"  data-en="Travel">旅行探索</a>
+        <a href="professional.html" data-zh="专业思考"  data-en="Professional">专业思考</a>
+        <a href="thinking.html"     data-zh="思维提升"  data-en="Thinking">思维提升</a>
+        <a href="about.html"        data-zh="关于我"    data-en="About">关于我</a>
       </div>
+      <p class="footer-stats">
+        <span id="busuanzi_container_site_pv">
+          <span data-zh="总访问量" data-en="Total Views">总访问量</span>：<span id="busuanzi_value_site_pv">--</span>
+        </span>
+        &nbsp;·&nbsp;
+        <span id="busuanzi_container_site_uv">
+          <span data-zh="访客数" data-en="Visitors">访客数</span>：<span id="busuanzi_value_site_uv">--</span>
+        </span>
+      </p>
       <p class="footer-copy">© 2026 Caleb's Space · All rights reserved</p>
     </div>
   </footer>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
