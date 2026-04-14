@@ -8,6 +8,39 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/main.css" />
+  <style>
+    /* ---- Language Toggle Button ---- */
+    #lang-toggle {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 12px;
+      border: 1.5px solid var(--brand);
+      border-radius: 20px;
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--brand);
+      background: transparent;
+      cursor: pointer;
+      transition: background .2s, color .2s;
+      margin-left: 8px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    #lang-toggle:hover {
+      background: var(--brand);
+      color: #fff;
+    }
+    /* ---- Busuanzi stats in footer ---- */
+    .footer-stats {
+      font-size: .78rem;
+      color: var(--text-tertiary, #78909C);
+      margin: 6px 0 0;
+      opacity: .85;
+    }
+    .footer-stats span {
+      margin: 0 6px;
+    }
+  </style>
 </head>
 <body>
 
@@ -19,12 +52,19 @@
         <span class="logo-text">Caleb's Space</span>
       </a>
       <nav class="main-nav" id="main-nav">
-        <a href="life.html" class="nav-link nav-life">日常生活</a>
-        <a href="travel.html" class="nav-link nav-travel">旅行探索</a>
-        <a href="professional.html" class="nav-link nav-pro">专业思考</a>
-        <a href="thinking.html" class="nav-link nav-think">思维提升</a>
-        <a href="about.html" class="nav-link nav-about">关于我</a>
+        <a href="life.html"         class="nav-link nav-life"
+           data-zh="日常生活" data-en="Daily Life">日常生活</a>
+        <a href="travel.html"       class="nav-link nav-travel"
+           data-zh="旅行探索" data-en="Travel">旅行探索</a>
+        <a href="professional.html" class="nav-link nav-pro"
+           data-zh="专业思考" data-en="Professional">专业思考</a>
+        <a href="thinking.html"     class="nav-link nav-think"
+           data-zh="思维提升" data-en="Thinking">思维提升</a>
+        <a href="about.html"        class="nav-link nav-about"
+           data-zh="关于我" data-en="About">关于我</a>
       </nav>
+      <!-- Language toggle -->
+      <button id="lang-toggle" title="Switch to English" aria-label="切换语言">EN</button>
       <button class="hamburger" id="hamburger" aria-label="菜单">
         <span></span><span></span><span></span>
       </button>
@@ -35,18 +75,26 @@
   <section class="hero">
     <div class="hero-bg-grid"></div>
     <div class="container hero-content">
-      <p class="hero-eyebrow">细胞培养工程师 · 记录者 · 思考者</p>
+      <p class="hero-eyebrow"
+         data-zh="细胞培养工程师 · 记录者 · 思考者"
+         data-en="Cell Culture Engineer · Creator · Thinker">细胞培养工程师 · 记录者 · 思考者</p>
       <h1 class="hero-title">
-        在生命科学的精密世界里<br>
-        <span class="hero-highlight">保持对人文的热忱</span>
+        <span data-zh="在生命科学的精密世界里" data-en="In the Precise World of Life Sciences">在生命科学的精密世界里</span><br>
+        <span class="hero-highlight"
+              data-zh="保持对人文的热忱"
+              data-en="Keeping Passion for Humanities">保持对人文的热忱</span>
       </h1>
-      <p class="hero-desc">
+      <p class="hero-desc"
+         data-zh="这里记录我的日常与旅行，沉淀我对生物制药行业的专业思考，也是我探索思维边界、感知社会温度的自留地。"
+         data-en="Here I document my daily life and travels, share professional insights on biopharma, and explore the boundaries of thought and society.">
         这里记录我的日常与旅行，沉淀我对生物制药行业的专业思考，<br class="desktop-br"/>
         也是我探索思维边界、感知社会温度的自留地。
       </p>
       <div class="hero-cta">
-        <a href="professional.html" class="btn btn-primary">探索专业思考</a>
-        <a href="#sections" class="btn btn-ghost">浏览全部内容</a>
+        <a href="professional.html" class="btn btn-primary"
+           data-zh="探索专业思考" data-en="Explore Professional">探索专业思考</a>
+        <a href="#sections" class="btn btn-ghost"
+           data-zh="浏览全部内容" data-en="Browse All">浏览全部内容</a>
       </div>
     </div>
     <div class="hero-dna">
@@ -54,8 +102,8 @@
         <g opacity="0.18">
           <path d="M30 10 Q90 50 30 90 Q-30 130 30 170 Q90 210 30 250 Q-30 290 30 330 Q90 370 30 410" stroke="#43A047" stroke-width="2.5" fill="none"/>
           <path d="M90 10 Q30 50 90 90 Q150 130 90 170 Q30 210 90 250 Q150 290 90 330 Q30 370 90 410" stroke="#EF6C00" stroke-width="2.5" fill="none"/>
-          <line x1="30" y1="50" x2="90" y2="50" stroke="#5C6BC0" stroke-width="1.5" opacity="0.7"/>
-          <line x1="30" y1="90" x2="90" y2="90" stroke="#5C6BC0" stroke-width="1.5" opacity="0.7"/>
+          <line x1="30" y1="50"  x2="90" y2="50"  stroke="#5C6BC0" stroke-width="1.5" opacity="0.7"/>
+          <line x1="30" y1="90"  x2="90" y2="90"  stroke="#5C6BC0" stroke-width="1.5" opacity="0.7"/>
           <line x1="30" y1="130" x2="90" y2="130" stroke="#FF8A65" stroke-width="1.5" opacity="0.7"/>
           <line x1="30" y1="170" x2="90" y2="170" stroke="#5C6BC0" stroke-width="1.5" opacity="0.7"/>
           <line x1="30" y1="210" x2="90" y2="210" stroke="#43A047" stroke-width="1.5" opacity="0.7"/>
@@ -70,8 +118,11 @@
   <!-- ======= FOUR SECTIONS ======= -->
   <section class="sections-overview" id="sections">
     <div class="container">
-      <h2 class="section-heading center">探索四个维度</h2>
-      <p class="section-sub center">每个板块都是我真实生活的一个切面</p>
+      <h2 class="section-heading center"
+          data-zh="探索四个维度" data-en="Four Dimensions">探索四个维度</h2>
+      <p class="section-sub center"
+         data-zh="每个板块都是我真实生活的一个切面"
+         data-en="Each section is a facet of my real life">每个板块都是我真实生活的一个切面</p>
 
       <div class="cards-grid">
 
@@ -80,12 +131,15 @@
           <div class="card-icon-wrap">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
           </div>
-          <div class="card-label">板块 A</div>
-          <h3 class="card-title">日常生活 Vlog</h3>
-          <p class="card-desc">烟火气、真实感、生活节奏。记录那些平凡又珍贵的日常碎片，实验室内外的真实模样。</p>
+          <div class="card-label" data-zh="板块 A" data-en="Section A">板块 A</div>
+          <h3 class="card-title" data-zh="日常生活 Vlog" data-en="Daily Life Vlog">日常生活 Vlog</h3>
+          <p class="card-desc"
+             data-zh="烟火气、真实感、生活节奏。记录那些平凡又珍贵的日常碎片，实验室内外的真实模样。"
+             data-en="Warmth, authenticity, life's rhythm. Capturing everyday moments inside and outside the lab.">
+            烟火气、真实感、生活节奏。记录那些平凡又珍贵的日常碎片，实验室内外的真实模样。</p>
           <div class="card-meta">
-            <span class="tag tag-life">日常</span>
-            <span class="tag tag-life">记录</span>
+            <span class="tag tag-life" data-zh="日常" data-en="Daily">日常</span>
+            <span class="tag tag-life" data-zh="记录" data-en="Record">记录</span>
           </div>
           <div class="card-arrow">→</div>
         </a>
@@ -95,12 +149,15 @@
           <div class="card-icon-wrap">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
           </div>
-          <div class="card-label">板块 B</div>
-          <h3 class="card-title">旅行探索 Vlog</h3>
-          <p class="card-desc">流动、远方、视野拓展。每一次出行都是对世界的主动提问，记录那些拓宽边界的旅程。</p>
+          <div class="card-label" data-zh="板块 B" data-en="Section B">板块 B</div>
+          <h3 class="card-title" data-zh="旅行探索 Vlog" data-en="Travel Vlog">旅行探索 Vlog</h3>
+          <p class="card-desc"
+             data-zh="流动、远方、视野拓展。每一次出行都是对世界的主动提问，记录那些拓宽边界的旅程。"
+             data-en="Flow, horizons, expanded perspectives. Every journey is an active question posed to the world.">
+            流动、远方、视野拓展。每一次出行都是对世界的主动提问，记录那些拓宽边界的旅程。</p>
           <div class="card-meta">
-            <span class="tag tag-travel">旅行</span>
-            <span class="tag tag-travel">探索</span>
+            <span class="tag tag-travel" data-zh="旅行" data-en="Travel">旅行</span>
+            <span class="tag tag-travel" data-zh="探索" data-en="Explore">探索</span>
           </div>
           <div class="card-arrow">→</div>
         </a>
@@ -110,13 +167,16 @@
           <div class="card-icon-wrap">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M11 8v3l2 2"/><line x1="16.5" y1="16.5" x2="22" y2="22"/></svg>
           </div>
-          <div class="card-label">板块 C · 核心</div>
-          <h3 class="card-title">专业思考</h3>
-          <p class="card-desc">细胞培养、生物制药、GMP 合规、职场探索。生命科学从业者视角的行业深度观察与个人成长记录。</p>
+          <div class="card-label" data-zh="板块 C · 核心" data-en="Section C · Core">板块 C · 核心</div>
+          <h3 class="card-title" data-zh="专业思考" data-en="Professional Insights">专业思考</h3>
+          <p class="card-desc"
+             data-zh="细胞培养、生物制药、GMP 合规、职场探索。生命科学从业者视角的行业深度观察与个人成长记录。"
+             data-en="Cell culture, biopharma, GMP compliance, career exploration. Deep industry observations from a life sciences practitioner.">
+            细胞培养、生物制药、GMP 合规、职场探索。生命科学从业者视角的行业深度观察与个人成长记录。</p>
           <div class="card-meta">
             <span class="tag tag-pro">细胞培养</span>
             <span class="tag tag-pro">GMP</span>
-            <span class="tag tag-pro">职场</span>
+            <span class="tag tag-pro" data-zh="职场" data-en="Career">职场</span>
           </div>
           <div class="card-arrow">→</div>
         </a>
@@ -126,12 +186,15 @@
           <div class="card-icon-wrap">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           </div>
-          <div class="card-label">板块 D</div>
-          <h3 class="card-title">思维提升</h3>
-          <p class="card-desc">光、洞察、抽象思考。关于思考本质、社会热点与人性观察，拒绝浅尝辄止的智识探索。</p>
+          <div class="card-label" data-zh="板块 D" data-en="Section D">板块 D</div>
+          <h3 class="card-title" data-zh="思维提升" data-en="Deep Thinking">思维提升</h3>
+          <p class="card-desc"
+             data-zh="光、洞察、抽象思考。关于思考本质、社会热点与人性观察，拒绝浅尝辄止的智识探索。"
+             data-en="Light, insight, abstract thought. On the nature of thinking, social phenomena, and human observation.">
+            光、洞察、抽象思考。关于思考本质、社会热点与人性观察，拒绝浅尝辄止的智识探索。</p>
           <div class="card-meta">
-            <span class="tag tag-think">思考</span>
-            <span class="tag tag-think">社会</span>
+            <span class="tag tag-think" data-zh="思考" data-en="Thinking">思考</span>
+            <span class="tag tag-think" data-zh="社会" data-en="Society">社会</span>
           </div>
           <div class="card-arrow">→</div>
         </a>
@@ -143,48 +206,83 @@
   <!-- ======= FEATURED ARTICLES ======= -->
   <section class="featured">
     <div class="container">
-      <h2 class="section-heading">近期精选</h2>
-      <p class="section-sub">这里将展示最新发布的内容</p>
+      <h2 class="section-heading"
+          data-zh="近期精选" data-en="Featured Posts">近期精选</h2>
+      <p class="section-sub"
+         data-zh="这里将展示最新发布的内容"
+         data-en="Latest content will appear here">这里将展示最新发布的内容</p>
       <div class="posts-list">
 
         <article class="post-row post-pro">
           <div class="post-cat-dot"></div>
           <div class="post-info">
-            <span class="post-cat-label cat-pro">专业思考</span>
-            <a href="professional.html" class="post-title">细胞培养工程师的第一天：从实验室到 GMP 车间的心态切换</a>
-            <p class="post-excerpt">从科研实验室进入工业化生产车间，不只是环境的变化，更是思维框架的重构……</p>
+            <span class="post-cat-label cat-pro"
+                  data-zh="专业思考" data-en="Professional">专业思考</span>
+            <a href="professional.html" class="post-title"
+               data-zh="细胞培养工程师的第一天：从实验室到 GMP 车间的心态切换"
+               data-en="Day One as a Cell Culture Engineer: From Lab Bench to GMP Manufacturing">
+              细胞培养工程师的第一天：从实验室到 GMP 车间的心态切换</a>
+            <p class="post-excerpt"
+               data-zh="从科研实验室进入工业化生产车间，不只是环境的变化，更是思维框架的重构……"
+               data-en="Moving from a research lab to an industrial GMP facility is not just a change of environment, but a reconstruction of mental frameworks…">
+              从科研实验室进入工业化生产车间，不只是环境的变化，更是思维框架的重构……</p>
           </div>
-          <div class="post-date">即将发布</div>
+          <div class="post-date"
+               data-zh="即将发布" data-en="Coming soon">即将发布</div>
         </article>
 
         <article class="post-row post-think">
           <div class="post-cat-dot"></div>
           <div class="post-info">
-            <span class="post-cat-label cat-think">思维提升</span>
-            <a href="thinking.html" class="post-title">为什么「第一性原理」在生物制药里格外难用</a>
-            <p class="post-excerpt">物理世界有确定的公理，生物系统却充满随机性与涌现性，从底层重新思考这个问题……</p>
+            <span class="post-cat-label cat-think"
+                  data-zh="思维提升" data-en="Deep Thinking">思维提升</span>
+            <a href="thinking.html" class="post-title"
+               data-zh="为什么「第一性原理」在生物制药里格外难用"
+               data-en="Why 'First Principles' Are Especially Hard to Apply in Biopharma">
+              为什么「第一性原理」在生物制药里格外难用</a>
+            <p class="post-excerpt"
+               data-zh="物理世界有确定的公理，生物系统却充满随机性与涌现性，从底层重新思考这个问题……"
+               data-en="The physical world has definite axioms, but biological systems are full of randomness and emergence…">
+              物理世界有确定的公理，生物系统却充满随机性与涌现性，从底层重新思考这个问题……</p>
           </div>
-          <div class="post-date">即将发布</div>
+          <div class="post-date"
+               data-zh="即将发布" data-en="Coming soon">即将发布</div>
         </article>
 
         <article class="post-row post-life">
           <div class="post-cat-dot"></div>
           <div class="post-info">
-            <span class="post-cat-label cat-life">日常生活</span>
-            <a href="life.html" class="post-title">入职前的最后一个假期：我做了什么</a>
-            <p class="post-excerpt">在进入职场之前，给自己留下一段真正属于自己的时间……</p>
+            <span class="post-cat-label cat-life"
+                  data-zh="日常生活" data-en="Daily Life">日常生活</span>
+            <a href="life.html" class="post-title"
+               data-zh="入职前的最后一个假期：我做了什么"
+               data-en="My Last Holiday Before Work: What I Did">
+              入职前的最后一个假期：我做了什么</a>
+            <p class="post-excerpt"
+               data-zh="在进入职场之前，给自己留下一段真正属于自己的时间……"
+               data-en="Before entering the workforce, I gave myself a stretch of time that truly belonged to me…">
+              在进入职场之前，给自己留下一段真正属于自己的时间……</p>
           </div>
-          <div class="post-date">即将发布</div>
+          <div class="post-date"
+               data-zh="即将发布" data-en="Coming soon">即将发布</div>
         </article>
 
         <article class="post-row post-travel">
           <div class="post-cat-dot"></div>
           <div class="post-info">
-            <span class="post-cat-label cat-travel">旅行探索</span>
-            <a href="travel.html" class="post-title">一个人的青海湖：当科学思维遭遇自然震撼</a>
-            <p class="post-excerpt">站在湖边的那一刻，我突然理解了为什么科学家也需要"无用的感动"……</p>
+            <span class="post-cat-label cat-travel"
+                  data-zh="旅行探索" data-en="Travel">旅行探索</span>
+            <a href="travel.html" class="post-title"
+               data-zh="一个人的青海湖：当科学思维遭遇自然震撼"
+               data-en="Qinghai Lake Solo: When Scientific Thinking Meets Awe of Nature">
+              一个人的青海湖：当科学思维遭遇自然震撼</a>
+            <p class="post-excerpt"
+               data-zh="站在湖边的那一刻，我突然理解了为什么科学家也需要「无用的感动」……"
+               data-en="Standing by the lake, I suddenly understood why scientists also need 'useless wonder'…">
+              站在湖边的那一刻，我突然理解了为什么科学家也需要"无用的感动"……</p>
           </div>
-          <div class="post-date">即将发布</div>
+          <div class="post-date"
+               data-zh="即将发布" data-en="Coming soon">即将发布</div>
         </article>
 
       </div>
@@ -195,32 +293,49 @@
   <section class="about-strip">
     <div class="container about-inner">
       <div class="about-text">
-        <h2 class="about-title">你好，我是 Caleb</h2>
-        <p>即将入职一家生物制药企业，担任细胞培养工程师。我相信真正的成长发生在实验室与生活之间的边界地带。</p>
-        <p>这个博客是我的思考外挂——记录下那些还没有答案的问题，以及正在形成的答案。</p>
-        <a href="about.html" class="btn btn-primary">了解更多</a>
+        <h2 class="about-title"
+            data-zh="你好，我是 Caleb"
+            data-en="Hi, I'm Caleb">你好，我是 Caleb</h2>
+        <p data-zh="即将入职一家生物制药企业，担任细胞培养工程师。我相信真正的成长发生在实验室与生活之间的边界地带。"
+           data-en="About to join a biopharma company as a Cell Culture Engineer. I believe real growth happens at the boundary between the lab and life.">
+          即将入职一家生物制药企业，担任细胞培养工程师。我相信真正的成长发生在实验室与生活之间的边界地带。</p>
+        <p data-zh="这个博客是我的思考外挂——记录下那些还没有答案的问题，以及正在形成的答案。"
+           data-en="This blog is my external brain — recording questions without answers yet, and answers still forming.">
+          这个博客是我的思考外挂——记录下那些还没有答案的问题，以及正在形成的答案。</p>
+        <a href="about.html" class="btn btn-primary"
+           data-zh="了解更多" data-en="Learn More">了解更多</a>
       </div>
       <div class="about-card-wrap">
         <div class="about-badge-card">
           <div class="badge-row">
             <span class="badge-icon">🔬</span>
             <div>
-              <div class="badge-title">细胞培养工程师</div>
-              <div class="badge-sub">生物制药 · 生产部门</div>
+              <div class="badge-title"
+                   data-zh="细胞培养工程师"
+                   data-en="Cell Culture Engineer">细胞培养工程师</div>
+              <div class="badge-sub"
+                   data-zh="生物制药 · 生产部门"
+                   data-en="Biopharma · Manufacturing">生物制药 · 生产部门</div>
             </div>
           </div>
           <div class="badge-row">
             <span class="badge-icon">📍</span>
             <div>
-              <div class="badge-title">中国</div>
-              <div class="badge-sub">即将开始新的旅程</div>
+              <div class="badge-title" data-zh="中国" data-en="China">中国</div>
+              <div class="badge-sub"
+                   data-zh="即将开始新的旅程"
+                   data-en="A new journey begins">即将开始新的旅程</div>
             </div>
           </div>
           <div class="badge-row">
             <span class="badge-icon">✍️</span>
             <div>
-              <div class="badge-title">内容创作者</div>
-              <div class="badge-sub">记录 · 思考 · 分享</div>
+              <div class="badge-title"
+                   data-zh="内容创作者"
+                   data-en="Content Creator">内容创作者</div>
+              <div class="badge-sub"
+                   data-zh="记录 · 思考 · 分享"
+                   data-en="Document · Think · Share">记录 · 思考 · 分享</div>
             </div>
           </div>
           <div class="badge-tags">
@@ -241,18 +356,32 @@
         <span class="logo-icon">🧬</span>
         <span class="logo-text">Caleb's Space</span>
       </div>
-      <p class="footer-desc">生命科学 × 人文探索 · 用文字记录成长的轨迹</p>
+      <p class="footer-desc"
+         data-zh="生命科学 × 人文探索 · 用文字记录成长的轨迹"
+         data-en="Life Science × Humanities · Documenting Growth Through Writing">生命科学 × 人文探索 · 用文字记录成长的轨迹</p>
       <div class="footer-links">
-        <a href="life.html">日常生活</a>
-        <a href="travel.html">旅行探索</a>
-        <a href="professional.html">专业思考</a>
-        <a href="thinking.html">思维提升</a>
-        <a href="about.html">关于我</a>
+        <a href="life.html"         data-zh="日常生活" data-en="Daily Life">日常生活</a>
+        <a href="travel.html"       data-zh="旅行探索" data-en="Travel">旅行探索</a>
+        <a href="professional.html" data-zh="专业思考" data-en="Professional">专业思考</a>
+        <a href="thinking.html"     data-zh="思维提升" data-en="Thinking">思维提升</a>
+        <a href="about.html"        data-zh="关于我" data-en="About">关于我</a>
       </div>
+      <!-- 不蒜子访问统计 -->
+      <p class="footer-stats">
+        <span id="busuanzi_container_site_pv">
+          <span data-zh="总访问量" data-en="Total Views">总访问量</span>：<span id="busuanzi_value_site_pv">--</span>
+        </span>
+        &nbsp;·&nbsp;
+        <span id="busuanzi_container_site_uv">
+          <span data-zh="访客数" data-en="Visitors">访客数</span>：<span id="busuanzi_value_site_uv">--</span>
+        </span>
+      </p>
       <p class="footer-copy">© 2026 Caleb's Space · All rights reserved</p>
     </div>
   </footer>
 
+  <!-- 不蒜子统计脚本（无需注册，自动生效） -->
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
