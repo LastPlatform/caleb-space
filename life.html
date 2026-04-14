@@ -8,6 +8,19 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/main.css" />
+  <style>
+    #lang-toggle {
+      display: inline-flex; align-items: center;
+      padding: 4px 12px; border: 1.5px solid var(--brand);
+      border-radius: 20px; font-size: .82rem; font-weight: 600;
+      color: var(--brand); background: transparent; cursor: pointer;
+      transition: background .2s, color .2s; margin-left: 8px;
+      white-space: nowrap; flex-shrink: 0;
+    }
+    #lang-toggle:hover { background: var(--brand); color: #fff; }
+    .footer-stats { font-size: .78rem; color: var(--text-tertiary, #78909C); margin: 6px 0 0; opacity: .85; }
+    .footer-stats span { margin: 0 6px; }
+  </style>
 </head>
 <body>
 
@@ -18,12 +31,13 @@
         <span class="logo-text">Caleb's Space</span>
       </a>
       <nav class="main-nav" id="main-nav">
-        <a href="life.html"         class="nav-link nav-life">日常生活</a>
-        <a href="travel.html"       class="nav-link nav-travel">旅行探索</a>
-        <a href="professional.html" class="nav-link nav-pro">专业思考</a>
-        <a href="thinking.html"     class="nav-link nav-think">思维提升</a>
-        <a href="about.html"        class="nav-link nav-about">关于我</a>
+        <a href="life.html"         class="nav-link nav-life"   data-zh="日常生活" data-en="Daily Life">日常生活</a>
+        <a href="travel.html"       class="nav-link nav-travel" data-zh="旅行探索" data-en="Travel">旅行探索</a>
+        <a href="professional.html" class="nav-link nav-pro"    data-zh="专业思考" data-en="Professional">专业思考</a>
+        <a href="thinking.html"     class="nav-link nav-think"  data-zh="思维提升" data-en="Thinking">思维提升</a>
+        <a href="about.html"        class="nav-link nav-about"  data-zh="关于我"   data-en="About">关于我</a>
       </nav>
+      <button id="lang-toggle" title="Switch to English" aria-label="切换语言">EN</button>
       <button class="hamburger" id="hamburger" aria-label="菜单">
         <span></span><span></span><span></span>
       </button>
@@ -32,9 +46,12 @@
 
   <div class="page-hero page-hero-life">
     <div class="container">
-      <p class="page-hero-eyebrow life-color">板块 A</p>
-      <h1 class="page-hero-title">日常生活 Vlog</h1>
-      <p class="page-hero-desc">烟火气、真实感、生活节奏。记录那些平凡又珍贵的日常碎片，实验室内外的真实模样。</p>
+      <p class="page-hero-eyebrow life-color" data-zh="板块 A" data-en="Section A">板块 A</p>
+      <h1 class="page-hero-title" data-zh="日常生活 Vlog" data-en="Daily Life Vlog">日常生活 Vlog</h1>
+      <p class="page-hero-desc"
+         data-zh="烟火气、真实感、生活节奏。记录那些平凡又珍贵的日常碎片，实验室内外的真实模样。"
+         data-en="Warmth, authenticity, life's rhythm. Capturing everyday moments inside and outside the lab.">
+        烟火气、真实感、生活节奏。记录那些平凡又珍贵的日常碎片，实验室内外的真实模样。</p>
     </div>
   </div>
 
@@ -45,30 +62,53 @@
         <div class="article-card reveal">
           <div class="article-card-cover article-card-cover-life">🏠</div>
           <div class="article-card-body">
-            <span class="tag tag-life">日常</span>
-            <h3 class="article-card-title">入职前的最后一个假期：我做了什么</h3>
-            <p class="article-card-excerpt">在进入职场之前，给自己留下一段真正属于自己的时间……</p>
-            <div class="article-card-footer"><span>即将发布</span></div>
+            <span class="tag tag-life" data-zh="日常" data-en="Daily">日常</span>
+            <h3 class="article-card-title"
+                data-zh="入职前的最后一个假期：我做了什么"
+                data-en="My Last Holiday Before Work: What I Did">入职前的最后一个假期：我做了什么</h3>
+            <p class="article-card-excerpt"
+               data-zh="在进入职场之前，给自己留下一段真正属于自己的时间……"
+               data-en="Before entering the workforce, I gave myself a stretch of time that truly belonged to me…">
+              在进入职场之前，给自己留下一段真正属于自己的时间……</p>
+            <div class="article-card-footer">
+              <span data-zh="即将发布" data-en="Coming soon">即将发布</span>
+            </div>
           </div>
         </div>
 
         <div class="article-card reveal">
           <div class="article-card-cover article-card-cover-life">☕</div>
           <div class="article-card-body">
-            <span class="tag tag-life">生活</span>
-            <h3 class="article-card-title">租房第一周：一个实验室出身的人如何布置自己的空间</h3>
-            <p class="article-card-excerpt">精密、整洁、有序——实验室思维渗透到了我整理家的方式……</p>
-            <div class="article-card-footer"><span>即将发布</span></div>
+            <span class="tag tag-life" data-zh="生活" data-en="Life">生活</span>
+            <h3 class="article-card-title"
+                data-zh="租房第一周：一个实验室出身的人如何布置自己的空间"
+                data-en="First Week Renting: How a Lab Person Arranges Their Space">
+              租房第一周：一个实验室出身的人如何布置自己的空间</h3>
+            <p class="article-card-excerpt"
+               data-zh="精密、整洁、有序——实验室思维渗透到了我整理家的方式……"
+               data-en="Precise, tidy, orderly — lab thinking has infiltrated the way I organise my home…">
+              精密、整洁、有序——实验室思维渗透到了我整理家的方式……</p>
+            <div class="article-card-footer">
+              <span data-zh="即将发布" data-en="Coming soon">即将发布</span>
+            </div>
           </div>
         </div>
 
         <div class="article-card reveal">
           <div class="article-card-cover article-card-cover-life">📅</div>
           <div class="article-card-body">
-            <span class="tag tag-life">节奏</span>
-            <h3 class="article-card-title">我的一周 Vlog：早六晚六的工厂生活是什么感觉</h3>
-            <p class="article-card-excerpt">真实记录一周的生产部门作息，没有滤镜的生物制药日常……</p>
-            <div class="article-card-footer"><span>即将发布</span></div>
+            <span class="tag tag-life" data-zh="节奏" data-en="Rhythm">节奏</span>
+            <h3 class="article-card-title"
+                data-zh="我的一周 Vlog：早六晚六的工厂生活是什么感觉"
+                data-en="My Week Vlog: What a 6am–6pm Factory Life Feels Like">
+              我的一周 Vlog：早六晚六的工厂生活是什么感觉</h3>
+            <p class="article-card-excerpt"
+               data-zh="真实记录一周的生产部门作息，没有滤镜的生物制药日常……"
+               data-en="An unfiltered week-long record of life in a biopharma manufacturing department…">
+              真实记录一周的生产部门作息，没有滤镜的生物制药日常……</p>
+            <div class="article-card-footer">
+              <span data-zh="即将发布" data-en="Coming soon">即将发布</span>
+            </div>
           </div>
         </div>
 
@@ -79,18 +119,32 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <span class="logo-icon">🧬</span>
-        <span class="logo-text">Caleb's Space</span>
+        <span class="logo-icon">🧬</span><span class="logo-text">Caleb's Space</span>
       </div>
-      <p class="footer-desc">生命科学 × 人文探索 · 用文字记录成长的轨迹</p>
+      <p class="footer-desc"
+         data-zh="生命科学 × 人文探索 · 用文字记录成长的轨迹"
+         data-en="Life Science × Humanities · Documenting Growth Through Writing">
+        生命科学 × 人文探索 · 用文字记录成长的轨迹</p>
       <div class="footer-links">
-        <a href="life.html">日常生活</a><a href="travel.html">旅行探索</a>
-        <a href="professional.html">专业思考</a><a href="thinking.html">思维提升</a>
-        <a href="about.html">关于我</a>
+        <a href="life.html"         data-zh="日常生活"  data-en="Daily Life">日常生活</a>
+        <a href="travel.html"       data-zh="旅行探索"  data-en="Travel">旅行探索</a>
+        <a href="professional.html" data-zh="专业思考"  data-en="Professional">专业思考</a>
+        <a href="thinking.html"     data-zh="思维提升"  data-en="Thinking">思维提升</a>
+        <a href="about.html"        data-zh="关于我"    data-en="About">关于我</a>
       </div>
+      <p class="footer-stats">
+        <span id="busuanzi_container_site_pv">
+          <span data-zh="总访问量" data-en="Total Views">总访问量</span>：<span id="busuanzi_value_site_pv">--</span>
+        </span>
+        &nbsp;·&nbsp;
+        <span id="busuanzi_container_site_uv">
+          <span data-zh="访客数" data-en="Visitors">访客数</span>：<span id="busuanzi_value_site_uv">--</span>
+        </span>
+      </p>
       <p class="footer-copy">© 2026 Caleb's Space · All rights reserved</p>
     </div>
   </footer>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
