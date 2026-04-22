@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>文章详情 — Caleb's Space</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/post.css" />
+  <style>
+    /* Language Toggle Button */
+    #lang-toggle {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 12px;
+      border: 1.5px solid var(--brand);
+      border-radius: 20px;
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--brand);
+      background: transparent;
+      cursor: pointer;
+      transition: background .2s, color .2s;
+      margin-left: 8px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    #lang-toggle:hover {
+      background: var(--brand);
+      color: #fff;
+    }
+    /* Footer stats */
+    .footer-stats {
+      font-size: .78rem;
+      color: var(--text-tertiary, #78909C);
+      margin: 6px 0 0;
+      opacity: .85;
+    }
+    .footer-stats span { margin: 0 6px; }
+
+    /* Category-specific accent bar at top */
+    .post-top-bar {
+      height: 5px;
+      width: 100%;
+    }
+    .post-top-bar-life   { background: linear-gradient(to right, var(--life), #A1887F); }
+    .post-top-bar-travel { background: linear-gradient(to right, var(--travel), #7986CB); }
+    .post-top-bar-pro    { background: linear-gradient(to right, var(--pro), #66BB6A); }
+    .post-top-bar-think  { background: linear-gradient(to right, var(--think), #FFAB91); }
+  </style>
+</head>
+<body>
+
+  <!-- ======= HEADER / NAV ======= -->
+  <header class="site-header" id="site-header">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">🧬</span>
+        <span class="logo-text">Caleb's Space</span>
+      </a>
+      <nav class="main-nav" id="main-nav">
+        <a href="life.html"         class="nav-link nav-life"
+           data-zh="日常生活" data-en="Daily Life">日常生活</a>
+        <a href="travel.html"       class="nav-link nav-travel"
+           data-zh="旅行探索" data-en="Travel">旅行探索</a>
+        <a href="professional.html" class="nav-link nav-pro"
+           data-zh="专业思考" data-en="Professional">专业思考</a>
+        <a href="thinking.html"     class="nav-link nav-think"
+           data-zh="思维提升" data-en="Thinking">思维提升</a>
+        <a href="about.html"        class="nav-link nav-about"
+           data-zh="关于我" data-en="About">关于我</a>
+      </nav>
+      <button id="lang-toggle" title="Switch to English" aria-label="切换语言">EN</button>
+      <button class="hamburger" id="hamburger" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ======= ARTICLE PAGE ======= -->
+  <main class="post-page">
+
+    <!-- Top accent bar (category color) -->
+    <div class="post-top-bar" id="post-top-bar"></div>
+
+    <!-- Breadcrumb -->
+    <div class="post-breadcrumb-wrap">
+      <div class="container">
+        <nav class="post-breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html"
+             data-zh="首页" data-en="Home">首页</a>
+          <span class="breadcrumb-sep">›</span>
+          <a href="#" id="breadcrumb-cat"
+             data-zh="专业思考" data-en="Professional">专业思考</a>
+          <span class="breadcrumb-sep">›</span>
+          <span class="breadcrumb-current" id="breadcrumb-title"
+                data-zh="文章标题" data-en="Article Title">文章标题</span>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Article Header -->
+    <div class="post-header-wrap">
+      <div class="container post-header-inner">
+        <!-- Tags -->
+        <div class="post-tags" id="post-tags">
+          <span class="tag tag-pro">细胞培养</span>
+        </div>
+
+        <!-- Title -->
+        <h1 class="post-title"
+            id="post-title"
+            data-zh="细胞培养工程师的第一天：从实验室到 GMP 车间的心态切换"
+            data-en="Day One as a Cell Culture Engineer: From Lab Bench to GMP Manufacturing">
+          细胞培养工程师的第一天：从实验室到 GMP 车间的心态切换</h1>
+
+        <!-- Meta row -->
+        <div class="post-meta-row">
+          <div class="post-author">
+            <span class="author-avatar">🧬</span>
+            <span class="author-name">Caleb</span>
+          </div>
+          <div class="post-meta-divider"></div>
+          <time class="post-date" id="post-date"
+                datetime="2026-04-22"
+                data-zh="2026年4月22日"
+                data-en="April 22, 2026">2026年4月22日</time>
+          <div class="post-meta-divider"></div>
+          <span class="post-read-time" id="post-read-time"
+                data-zh="约 5 分钟阅读"
+                data-en="5 min read">约 5 分钟阅读</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article Cover (optional) -->
+    <div class="post-cover-wrap" id="post-cover-wrap">
+      <div class="container">
+        <div class="post-cover" id="post-cover">
+          <!-- Placeholder cover; replace src with actual image -->
+          <div class="post-cover-placeholder">
+            <span>🔬</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article Body -->
+    <div class="post-body-wrap">
+      <div class="container">
+        <div class="post-content prose" id="post-content">
+
+          <!-- ================================================
+               下方是示例正文 — 替换为实际文章内容
+               ================================================ -->
+
+          <p data-zh="从科研实验室走进生物制药的 GMP 车间，不只是换了一个物理空间，更是整个思维框架的重构。实验室里，我们可以灵活调整方案、允许试错；而 GMP 车间里，每一个操作都有文件支撑，每一步都要求可追溯。这两种环境并没有高下之分，但确实需要不同的心态去应对。"
+             data-en="Stepping from a research lab into a GMP manufacturing facility isn't just a change of physical space — it's a reconstruction of the entire mental framework. In the lab, we can adjust plans flexibly and allow trial and error; in a GMP facility, every operation is supported by documentation and must be traceable.">
+            从科研实验室走进生物制药的 GMP 车间，不只是换了一个物理空间，更是整个思维框架的重构。实验室里，我们可以灵活调整方案、允许试错；而 GMP 车间里，每一个操作都有文件支撑，每一步都要求可追溯。这两种环境并没有高下之分，但确实需要不同的心态去应对。</p>
+
+          <h2 data-zh="心态切换：从「探索者」到「执行者」" data-en="Mindset Shift: From 'Explorer' to 'Executor'">心态切换：从「探索者」到「执行者」</h2>
+
+          <p data-zh="科研的核心是探索未知，你可以为了验证一个假设设计几十组实验，哪怕大部分都失败了也没关系，因为失败本身也是数据。但 GMP 的核心是按照受控的文件体系重复生产出质量稳定的产品。这里不允许「试试看」，每一批生产都要严格按照 SOP 执行，任何偏离都需要走偏差流程。"
+             data-en="Research is fundamentally about exploring the unknown — you can design dozens of experiments to test a hypothesis, and most failing is fine because failure itself is data. But the core of GMP is repeatably producing consistent-quality products according to a controlled documentation system. 'Let's try it' isn't allowed here; every batch must follow SOPs strictly, and any deviation requires a deviation report.">
+            科研的核心是探索未知，你可以为了验证一个假设设计几十组实验，哪怕大部分都失败了也没关系，因为失败本身也是数据。但 GMP 的核心是按照受控的文件体系重复生产出质量稳定的产品。这里不允许「试试看」，每一批生产都要严格按照 SOP 执行，任何偏离都需要走偏差流程。</p>
+
+          <blockquote class="blockquote-think" data-zh="「在 GMP 里，最好的状态是『我没有想法』——所有想法都在文件里，人只需要准确执行。」" data-en="'In GMP, the ideal state is having no ideas of your own — all the ideas are in the documents, and you just need to execute accurately.'">
+            「在 GMP 里，最好的状态是「我没有想法」——所有想法都在文件里，人只需要准确执行。」</blockquote>
+
+          <h2 data-zh="实际操作中的几个关键差异" data-en="Key Practical Differences">实际操作中的几个关键差异</h2>
+
+          <p data-zh="第一是时间节奏。实验室里你可以慢慢来，一个实验跑几天甚至几周都正常；GMP 车间有明确的生产计划和交期，时间压力是真实存在的。第二是环境控制。细胞培养对无菌要求极高，进入洁净区前的更衣流程、物体表面的定期监测、环境的温湿度控制……每一个细节都有 SOP 和记录。第三是异常处理。当培养出现问题时，你不能凭直觉决定下一步，而是要先填写偏差报告，然后根据文件评估处理方案。"
+             data-en="First, time rhythm. In the lab you can take your time — an experiment running for days or weeks is normal; in GMP there's a clear production schedule and deadline, and time pressure is real. Second, environment control. Cell culture demands strict sterility: gowning procedures before entering the cleanroom, regular surface monitoring, temperature and humidity controls... every detail has an SOP and record. Third, deviation handling. When a culture problem occurs, you can't decide the next step by intuition — you must first file a deviation report, then assess the response according to documented procedures.">
+            第一是时间节奏。实验室里你可以慢慢来，一个实验跑几天甚至几周都正常；GMP 车间有明确的生产计划和交期，时间压力是真实存在的。第二是环境控制。细胞培养对无菌要求极高，进入洁净区前的更衣流程、物体表面的定期监测、环境的温湿度控制……每一个细节都有 SOP 和记录。第三是异常处理。当培养出现问题时，你不能凭直觉决定下一步，而是要先填写偏差报告，然后根据文件评估处理方案。</p>
+
+          <h2 data-zh="给同行的建议" data-en="Advice for Fellow Practitioners">给同行的建议</h2>
+
+          <p data-zh="如果你正准备从学术界转向工业界，有几点我踩过的坑可以分享：一是在入职初期主动申请把 SOP 多读几遍，理解每一步背后的原理；二是不要害怕提问，在 GMP 体系里提问是学习，不是暴露无知；三是建立自己的检查清单，减少对记忆的依赖；四是理解「合规」不是束缚，而是保护——保护产品，也保护自己。"
+             data-en="If you're preparing to transition from academia to industry, here are some pitfalls I've encountered: First, proactively request to read through SOPs multiple times in your early days, understanding the reasoning behind each step. Second, don't be afraid to ask questions — in a GMP system, asking is learning, not exposing ignorance. Third, build your own checklists to reduce reliance on memory. Fourth, understand that 'compliance' isn't a constraint, but a protection — for the product and for yourself.">
+            如果你正准备从学术界转向工业界，有几点我踩过的坑可以分享：一是在入职初期主动申请把 SOP 多读几遍，理解每一步背后的原理；二是不要害怕提问，在 GMP 体系里提问是学习，不是暴露无知；三是建立自己的检查清单，减少对记忆的依赖；四是理解「合规」不是束缚，而是保护——保护产品，也保护自己。</p>
+
+          <p data-zh="转变心态不是放弃科学精神，而是在科学精神之上叠加一层工程思维。这两者并不冲突。"
+             data-en="Shifting mindset isn't abandoning the scientific spirit — it's adding an engineering layer on top of it. The two aren't in conflict.">
+
+            转变心态不是放弃科学精神，而是在科学精神之上叠加一层工程思维。这两者并不冲突。</p>
+
+          <!-- ================================================
+               上面是示例正文 — 替换为实际文章内容
+               ================================================ -->
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Article Footer: tags + share + nav -->
+    <div class="post-footer-wrap">
+      <div class="container">
+        <!-- End tags -->
+        <div class="post-end-tags" id="post-end-tags">
+          <span class="tag tag-pro">细胞培养</span>
+          <span class="tag tag-pro">GMP</span>
+          <span class="tag tag-pro">职场</span>
+        </div>
+
+        <!-- Post navigation (prev / next) -->
+        <div class="post-nav">
+          <a href="#" class="post-nav-btn post-nav-prev" id="post-nav-prev">
+            <span class="post-nav-dir"
+                  data-zh="← 上一篇"
+                  data-en="← Previous">← 上一篇</span>
+            <span class="post-nav-title" id="post-nav-prev-title">—</span>
+          </a>
+          <a href="#" class="post-nav-btn post-nav-next" id="post-nav-next">
+            <span class="post-nav-dir"
+                  data-zh="下一篇 →"
+                  data-en="Next →">下一篇 →</span>
+            <span class="post-nav-title" id="post-nav-next-title">—</span>
+          </a>
+        </div>
+
+        <!-- Back to section -->
+        <div class="post-back-section">
+          <a href="#" class="btn btn-ghost post-back-btn" id="post-back-btn">
+            <span data-zh="← 返回板块"
+                  data-en="← Back to Section">← 返回板块</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ======= FOOTER ======= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-icon">🧬</span>
+        <span class="logo-text">Caleb's Space</span>
+      </div>
+      <p class="footer-desc"
+         data-zh="生命科学 × 人文探索 · 用文字记录成长的轨迹"
+         data-en="Life Science × Humanities · Documenting Growth Through Writing">生命科学 × 人文探索 · 用文字记录成长的轨迹</p>
+      <div class="footer-links">
+        <a href="life.html"         data-zh="日常生活" data-en="Daily Life">日常生活</a>
+        <a href="travel.html"       data-zh="旅行探索" data-en="Travel">旅行探索</a>
+        <a href="professional.html" data-zh="专业思考" data-en="Professional">专业思考</a>
+        <a href="thinking.html"     data-zh="思维提升" data-en="Thinking">Thinking</a>
+        <a href="about.html"        data-zh="关于我" data-en="About">关于我</a>
+      </div>
+      <p class="footer-stats">
+        <span data-zh="总访问量" data-en="Total Views">总访问量</span>：<span id="busuanzi_value_site_pv">--</span>
+        &nbsp;·&nbsp;
+        <span data-zh="访客数" data-en="Visitors">访客数</span>：<span id="busuanzi_value_site_uv">--</span>
+      </p>
+      <p class="footer-copy">© 2026 Caleb's Space · All rights reserved</p>
+    </div>
+  </footer>
+
+  <!-- Busuanzi -->
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <!-- Post page data injection (文章数据注入) -->
+  <script src="js/post.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
