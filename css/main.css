@@ -554,8 +554,17 @@ ul { list-style: none; }
   color: var(--text-secondary);
   text-decoration: none;
   opacity: .8;
+  word-break: break-all;
 }
 .contact-email:hover { opacity: 1; text-decoration: underline; }
+
+/* 邮件联系标签：手机端上下排列 */
+.contact-tag {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+}
 
 @media (max-width: 600px) {
   .post-row { flex-direction: column; gap: 8px; }
