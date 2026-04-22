@@ -130,6 +130,9 @@
 
     // persist
     localStorage.setItem(LANG_KEY, lang);
+
+    // notify other scripts that language changed (e.g. post.js)
+    document.dispatchEvent(new CustomEvent("langRefresh"));
   }
 
   function initLang() {
