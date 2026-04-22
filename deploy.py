@@ -35,13 +35,13 @@ def create_repo(username):
     }
     resp = requests.post(url, headers=HEADERS, json=payload)
     if resp.status_code == 201:
-        print("✅ 仓库创建成功！")
+        print("[OK] Repository created.")
         return True
     elif resp.status_code == 422:
-        print("⚠️  仓库已存在，跳过创建。")
+        print("[--] Repository already exists, skipping.")
         return True
     else:
-        print(f"❌ 创建仓库失败：{resp.status_code} {resp.text}")
+        print(f"[FAIL] Repository creation failed: {resp.status_code} {resp.text}")
         return False
 
 # ── Step 3: Upload files ─────────────────────────────────────────────────────
@@ -58,9 +58,9 @@ def upload_file(username, filepath, content_bytes):
         payload["sha"] = existing.json()["sha"]
     resp = requests.put(url, headers=HEADERS, json=payload)
     if resp.status_code in (200, 201):
-        print(f"  ✅ {filepath}")
+        print(f"  [OK] {filepath}")
     else:
-        print(f"  ❌ {filepath}: {resp.status_code}")
+        print(f"  [FAIL] {filepath}: {resp.status_code}")
 
 def upload_directory(username, local_dir):
     for root, dirs, files in os.walk(local_dir):
@@ -77,9 +77,11 @@ def upload_directory(username, local_dir):
 
 # ── Step 4: Enable GitHub Pages ──────────────────────────────────────────────
 def enable_pages(username):
-    url = f"https://api.github.com/repos/{username}/{REPO_NAME}/pages"
+    # First, set the Pages source via the repos API
+    pages_url = f"https://api.github.com/repos/{username}/{REPO_NAME}/pages"
+    # Use legacy build_type (no workflow needed)
     payload = {
-        "build_type": "workflow",
+        "build_type": "legacy",
         "source": {
             "branch": "main",
             "path": "/"
@@ -89,7 +91,7 @@ def enable_pages(username):
     resp = requests.get(url, headers=HEADERS)
     if resp.status_code == 200:
         existing = resp.json()
-        print(f"ℹ️  Pages 已存在，branch={existing.get('source', {}).get('branch')}")
+        print(f"[INFO] Pages already exists, branch={existing.get('source', {}).get('branch')}")
         if existing.get("source", {}).get("branch") == "main":
             return
         # Need to update
@@ -97,30 +99,30 @@ def enable_pages(username):
     elif resp.status_code == 404:
         resp = requests.post(url, headers=HEADERS, json=payload)
     else:
-        print(f"⚠️  Pages 状态检查失败：{resp.status_code}")
+        print(f"[WARN] Pages status check failed: {resp.status_code}")
 
     if resp.status_code in (200, 201):
-        print("✅ GitHub Pages 已启用！")
+        print("[OK] GitHub Pages enabled.")
     else:
-        print(f"⚠️  启用 Pages 失败：{resp.status_code} — 可能需要先完成首次 push 才能自动部署")
+        print(f"[WARN] Pages enable failed: {resp.status_code} — first push may be needed first")
 
 # ── Main ─────────────────────────────────────────────────────────────────────
 if __name__ == "__main__":
-    print("🚀 开始部署到 GitHub...\n")
+    print("=> Deploying to GitHub...")
     username = get_username()
-    print(f"👤 GitHub 用户名：{username}\n")
+    print(f"=> GitHub username: {username}\n")
 
     if not create_repo(username):
-        print("仓库创建失败，终止。")
+        print("Repo creation failed, aborting.")
     else:
-        print("\n📤 上传文件...")
+        print("\n=> Uploading files...")
         local_dir = r"c:\Users\Caleb\WorkBuddy\20260411205106"
         upload_directory(username, local_dir)
 
-        print("\n🌐 启用 GitHub Pages...")
+        print("\n=> Enabling GitHub Pages...")
         enable_pages(username)
 
-        print(f"\n✨ 完成！")
-        print(f"   仓库地址：https://github.com/{username}/{REPO_NAME}")
-        print(f"   网站地址：https://{username}.github.io/{REPO_NAME}")
-        print(f"   （首次部署约需 2-5 分钟，刷新即可）")
+        print(f"\n=> Done!")
+        print(f"   Repo: https://github.com/{username}/{REPO_NAME}")
+        print(f"   Site: https://{username}.github.io/{REPO_NAME}")
+        print(f"   (GitHub Pages takes ~2-5 min to build, refresh after a moment)")
