@@ -548,6 +548,15 @@ ul { list-style: none; }
   opacity: .7;
 }
 
+/* contact-email link inside skill-tag */
+.contact-email {
+  font-size: .82rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  opacity: .8;
+}
+.contact-email:hover { opacity: 1; text-decoration: underline; }
+
 @media (max-width: 600px) {
   .post-row { flex-direction: column; gap: 8px; }
   .post-date { padding-top: 0; }
