@@ -88,7 +88,7 @@ def enable_pages(username):
         }
     }
     # First try to get current pages status
-    resp = requests.get(url, headers=HEADERS)
+    resp = requests.get(pages_url, headers=HEADERS)
     if resp.status_code == 200:
         existing = resp.json()
         print(f"[INFO] Pages already exists, branch={existing.get('source', {}).get('branch')}")
