@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>小说 — Caleb's Space</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/post.css" />
+  <style>
+    /* Language Toggle Button */
+    #lang-toggle {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 12px;
+      border: 1.5px solid var(--brand);
+      border-radius: 20px;
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--brand);
+      background: transparent;
+      cursor: pointer;
+      transition: background .2s, color .2s;
+      margin-left: 8px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    #lang-toggle:hover {
+      background: var(--brand);
+      color: #fff;
+    }
+    /* Footer stats */
+    .footer-stats {
+      font-size: .78rem;
+      color: var(--text-tertiary, #78909C);
+      margin: 6px 0 0;
+      opacity: .85;
+    }
+    .footer-stats span { margin: 0 6px; }
+
+    /* Category accent bar at top */
+    .post-top-bar {
+      height: 5px;
+      width: 100%;
+    }
+    .post-top-bar-novel { background: linear-gradient(to right, var(--novel), #9C27B0); }
+
+    /* 防止门禁激活时正文滚动 */
+    body.gate-active { overflow: hidden; }
+  </style>
+</head>
+<body>
+
+  <!-- ======= HEADER / NAV ======= -->
+  <header class="site-header" id="site-header">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">🧬</span>
+        <span class="logo-text">Caleb's Space</span>
+      </a>
+      <nav class="main-nav" id="main-nav">
+        <a href="life.html"         class="nav-link nav-life"
+           data-zh="日常生活" data-en="Daily Life">日常生活</a>
+        <a href="travel.html"       class="nav-link nav-travel"
+           data-zh="旅行探索" data-en="Travel">旅行探索</a>
+        <a href="professional.html" class="nav-link nav-pro"
+           data-zh="专业思考" data-en="Professional">专业思考</a>
+        <a href="thinking.html"     class="nav-link nav-think"
+           data-zh="思维提升" data-en="Thinking">思维提升</a>
+        <a href="novel.html"        class="nav-link nav-novel"
+           data-zh="小说" data-en="Novel">小说</a>
+        <a href="about.html"        class="nav-link nav-about"
+           data-zh="关于我" data-en="About">关于我</a>
+      </nav>
+      <button id="lang-toggle" title="Switch to English" aria-label="切换语言">EN</button>
+      <button class="hamburger" id="hamburger" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ======= NOVEL GATE (访问码门禁) ======= -->
+  <div class="novel-gate" id="novel-gate">
+    <div class="novel-gate-card">
+      <div class="novel-gate-icon">📖</div>
+      <h2 class="novel-gate-title"
+          data-zh="这是一个私密板块"
+          data-en="This is a private section">这是一个私密板块</h2>
+      <p class="novel-gate-desc"
+         data-zh="小说板块仅供受邀读者阅读。请输入访问码继续。"
+         data-en="The novel section is for invited readers only. Please enter the access code to continue.">
+        小说板块仅供受邀读者阅读。请输入访问码继续。</p>
+      <form id="novel-gate-form" autocomplete="off">
+        <input
+          type="text"
+          class="novel-gate-input"
+          id="novel-gate-input"
+          placeholder="请输入访问码"
+          data-zh-placeholder="请输入访问码"
+          data-en-placeholder="Enter access code"
+          aria-label="访问码" />
+        <button type="submit" class="novel-gate-btn"
+                data-zh="进入阅读"
+                data-en="Enter">进入阅读</button>
+      </form>
+      <p class="novel-gate-error" id="novel-gate-error"
+         data-zh="访问码不正确，请重试"
+         data-en="Incorrect access code, please try again">访问码不正确，请重试</p>
+      <p class="novel-gate-hint"
+         data-zh="如需访问码，请联系博主"
+         data-en="For the access code, please contact the author">如需访问码，请联系博主</p>
+    </div>
+  </div>
+
+  <!-- ======= NOVEL CONTENT (验证通过后显示) ======= -->
+  <main class="novel-content" id="novel-content">
+
+    <!-- Top accent bar -->
+    <div class="post-top-bar post-top-bar-novel"></div>
+
+    <!-- Breadcrumb -->
+    <div class="post-breadcrumb-wrap">
+      <div class="container">
+        <nav class="post-breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html"
+             data-zh="首页" data-en="Home">首页</a>
+          <span class="breadcrumb-sep">›</span>
+          <a href="novel.html"
+             data-zh="小说" data-en="Novel">小说</a>
+          <span class="breadcrumb-sep">›</span>
+          <span class="breadcrumb-current"
+                data-zh="未命名的小说"
+                data-en="Untitled Novel">未命名的小说</span>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Article Header -->
+    <div class="post-header-wrap">
+      <div class="container post-header-inner">
+        <div class="post-tags">
+          <span class="tag tag-novel" data-zh="小说" data-en="Novel">小说</span>
+          <span class="tag tag-novel" data-zh="原创" data-en="Original">原创</span>
+        </div>
+
+        <h1 class="post-title"
+            data-zh="未命名的小说"
+            data-en="Untitled Novel">未命名的小说</h1>
+
+        <div class="post-meta-row">
+          <div class="post-author">
+            <span class="author-avatar">✍️</span>
+            <span class="author-name">Caleb</span>
+          </div>
+          <div class="post-meta-divider"></div>
+          <time class="post-date"
+                datetime="2026-07-24"
+                data-zh="2026年7月24日"
+                data-en="July 24, 2026">2026年7月24日</time>
+          <div class="post-meta-divider"></div>
+          <span class="post-read-time"
+                data-zh="连载中"
+                data-en="Ongoing">连载中</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article Body -->
+    <div class="post-body-wrap">
+      <div class="container">
+        <div class="post-content prose">
+
+          <!-- ================================================
+               小说正文（占位）— 替换为实际内容
+               ================================================ -->
+
+          <p data-zh="这里将放置小说正文。" data-en="The novel content will appear here.">
+            这里将放置小说正文。</p>
+
+          <p data-zh="当前为占位内容。作者可以随时把这一段替换为真正的小说文字——第一章、序章，或任何想开始的地方。" data-en="This is placeholder content. The author can replace this with the actual novel text — chapter one, a prologue, or wherever you want to begin.">
+            当前为占位内容。作者可以随时把这一段替换为真正的小说文字——第一章、序章，或任何想开始的地方。</p>
+
+          <h2 data-zh="第一章 · 序" data-en="Chapter One · Prologue">第一章 · 序</h2>
+
+          <p data-zh="（正文待补）" data-en="(Content to be added)">
+            （正文待补）</p>
+
+          <blockquote class="blockquote-think"
+                      data-zh="「每个故事都有一个开始，但不是每个开始都被讲述。」"
+                      data-en="'Every story has a beginning, but not every beginning is told.'">
+            「每个故事都有一个开始，但不是每个开始都被讲述。」</blockquote>
+
+          <p data-zh="—— 待续 ——" data-en="—— To be continued ——">
+            —— 待续 ——</p>
+
+          <!-- ================================================
+               上面是占位正文 — 替换为实际小说内容
+               ================================================ -->
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Article Footer -->
+    <div class="post-footer-wrap">
+      <div class="container">
+        <div class="post-end-tags">
+          <span class="tag tag-novel" data-zh="小说" data-en="Novel">小说</span>
+          <span class="tag tag-novel" data-zh="原创" data-en="Original">原创</span>
+          <span class="tag tag-novel" data-zh="连载" data-en="Serial">连载</span>
+        </div>
+
+        <div class="post-back-section">
+          <a href="index.html" class="btn btn-ghost post-back-btn">
+            <span data-zh="← 返回首页" data-en="← Back to Home">← 返回首页</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ======= FOOTER ======= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-icon">🧬</span>
+        <span class="logo-text">Caleb's Space</span>
+      </div>
+      <p class="footer-desc"
+         data-zh="生命科学 × 人文探索 · 用文字记录成长的轨迹"
+         data-en="Life Science × Humanities · Documenting Growth Through Writing">生命科学 × 人文探索 · 用文字记录成长的轨迹</p>
+      <div class="footer-links">
+        <a href="life.html"         data-zh="日常生活" data-en="Daily Life">日常生活</a>
+        <a href="travel.html"       data-zh="旅行探索" data-en="Travel">旅行探索</a>
+        <a href="professional.html" data-zh="专业思考" data-en="Professional">专业思考</a>
+        <a href="thinking.html"     data-zh="思维提升" data-en="Thinking">思维提升</a>
+        <a href="novel.html"        data-zh="小说" data-en="Novel">小说</a>
+        <a href="about.html"        data-zh="关于我" data-en="About">关于我</a>
+      </div>
+      <!-- 不蒜子访问统计 -->
+      <p class="footer-stats">
+        <span id="busuanzi_container_site_pv">
+          <span data-zh="总访问量" data-en="Total Views">总访问量</span>：<span id="busuanzi_value_site_pv">--</span>
+        </span>
+        &nbsp;·&nbsp;
+        <span id="busuanzi_container_site_uv">
+          <span data-zh="访客数" data-en="Visitors">访客数</span>：<span id="busuanzi_value_site_uv">--</span>
+        </span>
+      </p>
+      <p class="footer-copy">© 2026 Caleb's Space · All rights reserved</p>
+    </div>
+  </footer>
+
+  <!-- 不蒜子统计脚本 -->
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <!-- novel.js 必须在 main.js 之前，以便 main.js 的语言初始化能翻译门禁文案 -->
+  <script src="js/novel.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
