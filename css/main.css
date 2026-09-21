@@ -1024,3 +1024,161 @@ ul { list-style: none; }
 /* Novel content wrapper — hidden until access granted */
 .novel-content { display: none; }
 .novel-content.unlocked { display: block; }
+
+/* ============================================================
+   NOVEL TABS (栏目切换：小说 / 恋爱)
+   ============================================================ */
+.novel-tabs {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  padding: 28px 0 8px;
+  flex-wrap: wrap;
+}
+.novel-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border: 1.5px solid var(--novel-light);
+  border-radius: 24px;
+  background: transparent;
+  color: var(--novel);
+  font-size: .95rem;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  transition: background .2s, color .2s, border-color .2s, transform .2s;
+}
+.novel-tab:hover { transform: translateY(-1px); }
+.novel-tab.is-active {
+  background: linear-gradient(135deg, #9C27B0 0%, #6A1B9A 100%);
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(106,27,154,.3);
+}
+.novel-tab-icon { font-size: 1.1rem; }
+
+/* 面板切换 */
+.novel-panel { display: none; }
+.novel-panel.is-active { display: block; }
+
+/* ============================================================
+   LOVE GATE (恋爱栏二级门禁，页面内卡片)
+   ============================================================ */
+.love-gate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #2D0A4E 0%, #4A148C 100%);
+  border-radius: 18px;
+  margin: 24px 0;
+}
+.love-gate.hidden { display: none; }
+.love-gate-card {
+  background: rgba(255,255,255,.06);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 20px;
+  padding: 44px 36px;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  animation: gateFadeIn .6s ease;
+}
+.love-gate-icon { font-size: 2.6rem; margin-bottom: 16px; }
+.love-gate-title {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #fff;
+}
+.love-gate-desc {
+  font-size: .9rem;
+  color: rgba(255,255,255,.65);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+.love-gate-input {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 1.5px solid rgba(255,255,255,.2);
+  background: rgba(255,255,255,.08);
+  color: #fff;
+  font-size: 1rem;
+  font-family: var(--font-sans);
+  text-align: center;
+  letter-spacing: .08em;
+  transition: border-color var(--transition), background var(--transition);
+  margin-bottom: 14px;
+  box-sizing: border-box;
+}
+.love-gate-input::placeholder { color: rgba(255,255,255,.4); }
+.love-gate-input:focus {
+  outline: none;
+  border-color: #CE93D8;
+  background: rgba(255,255,255,.12);
+}
+.love-gate-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg, #9C27B0 0%, #6A1B9A 100%);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition);
+  letter-spacing: .05em;
+}
+.love-gate-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(156,39,176,.4);
+}
+.love-gate-error {
+  display: none;
+  color: #FF8A80;
+  font-size: .85rem;
+  margin-top: 12px;
+}
+.love-gate-error.show {
+  display: block;
+  animation: shake .4s ease;
+}
+
+/* 恋爱内容 */
+.love-content { display: none; }
+.love-content.is-unlocked { display: block; }
+.love-entry {
+  background: var(--surface);
+  border: 1px solid var(--divider);
+  border-left: 4px solid var(--novel);
+  border-radius: var(--radius-lg);
+  padding: 28px 32px;
+  margin: 24px 0;
+}
+.love-entry-head {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--divider);
+}
+.love-entry-date {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--novel);
+}
+.love-entry-title {
+  font-size: .9rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
