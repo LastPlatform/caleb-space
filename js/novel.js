@@ -115,4 +115,81 @@
     check: () => isGranted()
   };
 
+  /* ============================================================
+   * 栏目切换（小说 / 恋爱）
+   * ============================================================ */
+  const tabs = document.querySelectorAll(".novel-tab");
+  const panels = {
+    fiction: document.getElementById("panel-fiction"),
+    love:    document.getElementById("panel-love")
+  };
+  function switchTab(name) {
+    tabs.forEach(t => t.classList.toggle("is-active", t.dataset.tab === name));
+    Object.keys(panels).forEach(k => {
+      if (panels[k]) panels[k].classList.toggle("is-active", k === name);
+    });
+  }
+  tabs.forEach(t => t.addEventListener("click", () => switchTab(t.dataset.tab)));
+
+  /* ============================================================
+   * 恋爱栏二级密码 — Aleen
+   *   改密码后，老设备的 localStorage 值不再匹配，自动失效
+   *   安全说明：纯前端密码，源码可见，仅作"礼貌性拦截"
+   * ============================================================ */
+  const LOVE_PASSWORD = "Aleen";
+  const LOVE_KEY = "love-access";
+  const loveGate    = document.getElementById("love-gate");
+  const loveContent = document.getElementById("love-content");
+  const loveForm    = document.getElementById("love-gate-form");
+  const loveInput   = document.getElementById("love-gate-input");
+  const loveError   = document.getElementById("love-gate-error");
+
+  function loveGranted() {
+    return localStorage.getItem(LOVE_KEY) === LOVE_PASSWORD;
+  }
+  function showLoveContent() {
+    if (loveGate)    loveGate.classList.add("hidden");
+    if (loveContent) loveContent.classList.add("is-unlocked");
+  }
+  function showLoveGate() {
+    if (loveGate)    loveGate.classList.remove("hidden");
+    if (loveContent) loveContent.classList.remove("is-unlocked");
+    if (loveInput)   setTimeout(() => loveInput.focus(), 100);
+  }
+  function tryLoveAccess() {
+    if (!loveInput) return;
+    if (loveInput.value.trim() === LOVE_PASSWORD) {
+      localStorage.setItem(LOVE_KEY, LOVE_PASSWORD);
+      showLoveContent();
+    } else {
+      if (loveError) {
+        loveError.classList.add("show");
+        setTimeout(() => loveError.classList.remove("show"), 3000);
+      }
+      loveInput.value = "";
+      loveInput.focus();
+    }
+  }
+  if (loveGate && loveContent) {
+    if (loveGranted()) showLoveContent();
+    else showLoveGate();
+    if (loveForm) {
+      loveForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        tryLoveAccess();
+      });
+    }
+    // placeholder 翻译（复用 langRefresh）
+    function translateLovePlaceholder() {
+      if (!loveInput) return;
+      const lang = localStorage.getItem("caleb-lang") || "zh";
+      const txt = lang === "en"
+        ? loveInput.getAttribute("data-en-placeholder")
+        : loveInput.getAttribute("data-zh-placeholder");
+      if (txt) loveInput.placeholder = txt;
+    }
+    translateLovePlaceholder();
+    document.addEventListener("langRefresh", translateLovePlaceholder);
+  }
+
 })();
