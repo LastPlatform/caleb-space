@@ -47,8 +47,7 @@
     }
     .post-top-bar-novel { background: linear-gradient(to right, var(--novel), #9C27B0); }
 
-    /* 防止门禁激活时正文滚动 */
-    body.gate-active { overflow: hidden; }
+    /* 小说板块已取消整板块访问码，仅「恋爱」分栏保留密码（每次进入重新验证） */
   </style>
 </head>
 <body>
@@ -81,40 +80,7 @@
     </div>
   </header>
 
-  <!-- ======= NOVEL GATE (访问码门禁) ======= -->
-  <div class="novel-gate" id="novel-gate">
-    <div class="novel-gate-card">
-      <div class="novel-gate-icon">📖</div>
-      <h2 class="novel-gate-title"
-          data-zh="这是一个私密板块"
-          data-en="This is a private section">这是一个私密板块</h2>
-      <p class="novel-gate-desc"
-         data-zh="小说板块仅供受邀读者阅读。请输入访问码继续。"
-         data-en="The novel section is for invited readers only. Please enter the access code to continue.">
-        小说板块仅供受邀读者阅读。请输入访问码继续。</p>
-      <form id="novel-gate-form" autocomplete="off">
-        <input
-          type="text"
-          class="novel-gate-input"
-          id="novel-gate-input"
-          placeholder="请输入访问码"
-          data-zh-placeholder="请输入访问码"
-          data-en-placeholder="Enter access code"
-          aria-label="访问码" />
-        <button type="submit" class="novel-gate-btn"
-                data-zh="进入阅读"
-                data-en="Enter">进入阅读</button>
-      </form>
-      <p class="novel-gate-error" id="novel-gate-error"
-         data-zh="访问码不正确，请重试"
-         data-en="Incorrect access code, please try again">访问码不正确，请重试</p>
-      <p class="novel-gate-hint"
-         data-zh="如需访问码，请联系博主"
-         data-en="For the access code, please contact the author">如需访问码，请联系博主</p>
-    </div>
-  </div>
-
-  <!-- ======= NOVEL CONTENT (验证通过后显示) ======= -->
+  <!-- ======= NOVEL CONTENT ======= -->
   <main class="novel-content" id="novel-content">
 
     <!-- Top accent bar -->
