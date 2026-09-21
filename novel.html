@@ -120,6 +120,21 @@
     <!-- Top accent bar -->
     <div class="post-top-bar post-top-bar-novel"></div>
 
+    <!-- 栏目切换 -->
+    <div class="novel-tabs">
+      <button class="novel-tab is-active" data-tab="fiction" type="button">
+        <span class="novel-tab-icon">📖</span>
+        <span data-zh="小说" data-en="Fiction">小说</span>
+      </button>
+      <button class="novel-tab" data-tab="love" type="button">
+        <span class="novel-tab-icon">💕</span>
+        <span data-zh="恋爱" data-en="Love">恋爱</span>
+      </button>
+    </div>
+
+    <!-- 小说面板 -->
+    <div class="novel-panel is-active" id="panel-fiction">
+
     <!-- Breadcrumb -->
     <div class="post-breadcrumb-wrap">
       <div class="container">
@@ -219,6 +234,81 @@
         </div>
       </div>
     </div>
+
+    </div><!-- /#panel-fiction -->
+
+    <!-- 恋爱面板 -->
+    <div class="novel-panel" id="panel-love">
+
+      <!-- 二级门禁（密码 Aleen） -->
+      <div class="love-gate" id="love-gate">
+        <div class="love-gate-card">
+          <div class="love-gate-icon">💕</div>
+          <h2 class="love-gate-title"
+              data-zh="恋爱记录 · 最私密"
+              data-en="Love Journal · Most Private">恋爱记录 · 最私密</h2>
+          <p class="love-gate-desc"
+             data-zh="这里记录只属于两个人的瞬间。请输入密码查看。"
+             data-en="Moments shared by just the two of us. Enter the password to read.">
+            这里记录只属于两个人的瞬间。请输入密码查看。</p>
+          <form id="love-gate-form" autocomplete="off">
+            <input type="password"
+                   class="love-gate-input"
+                   id="love-gate-input"
+                   placeholder="请输入密码"
+                   data-zh-placeholder="请输入密码"
+                   data-en-placeholder="Enter password"
+                   aria-label="密码" />
+            <button type="submit" class="love-gate-btn"
+                    data-zh="查看" data-en="View">查看</button>
+          </form>
+          <p class="love-gate-error" id="love-gate-error"
+             data-zh="密码不正确，请重试"
+             data-en="Incorrect password, please try again">密码不正确，请重试</p>
+        </div>
+      </div>
+
+      <!-- 恋爱内容 -->
+      <div class="love-content" id="love-content">
+
+        <div class="love-entry">
+          <div class="love-entry-head">
+            <span class="love-entry-date">09.20</span>
+            <span class="love-entry-title" data-zh="片段 1" data-en="Fragment 1">片段 1</span>
+          </div>
+          <div class="prose">
+            <p>我看到房间地毯上的那一缕长发，陷入了沉思。我是一个有点洁癖的人。但是现在我不愿清理这来自她的痕迹。</p>
+            <p>注视着，思绪回到了昨天晚上。我仿佛又闻到了她的味道。</p>
+            <p>我们拥抱在一起，亲吻。</p>
+            <p>我们在一起，把她喜欢的乐队 MV 都看了一遍。我真的没想到她居然能把这么多日文歌全部完整地唱出来，真的是太厉害了，好一个多才多艺。</p>
+            <p>我想起来我曾经也看很多动漫，我在大学的时候，每个季度的新番都会追，我也喜欢听日文歌。只是到了工作以后，也没有再怎么看过动漫了。也因为经历的事情越来越多，我听音乐，已经变成了一个人心灵的旅行。我在听音乐的时候，脑海中会浮现出来。一个故事。一个专属于我的故事。</p>
+            <p>也许以后我可以和她多交流交流，分享我们听到不同音乐所感受到的情感。</p>
+          </div>
+        </div>
+
+        <div class="love-entry">
+          <div class="love-entry-head">
+            <span class="love-entry-date">09.21</span>
+            <span class="love-entry-title" data-zh="片段 2" data-en="Fragment 2">片段 2</span>
+          </div>
+          <div class="prose">
+            <p>早晨，我的心脏骤然一紧，从无意识的睡眠中获取了一丝清醒，看了一眼时间是 5:10，本想上个厕所继续睡觉的我。刚准备翻身起来，却听到了门锁的声音。顿时我便紧闭着双眼。一动不敢动了。</p>
+            <p>我的门上装着一个很清脆的铃铛，开门的时候会发出悦耳明亮的声音。而这一次门缓缓地打开，没有一点声音。我心里大概有了答案，是我可爱的精灵吧？</p>
+            <p>过了一会儿。我感受到了身边床上多了一个温暖的身子，我嗅到了熟悉的味道。那是柚子的清香味加一点甜味的感觉。</p>
+            <p>她轻轻地牵动我的手，靠近她的身体。然后，湿润的唇落在了我的脸颊上。那一瞬间巨大的喜悦，无与伦比的幸福感，充满了我的心。我快要忍不住乐出来了。但是不行，我一定得忍住，不要把我可爱的精灵吓到了。</p>
+            <p>但是我最后还是不得不醒了，她好像发现了我嘴角的笑容。</p>
+            <p>我们相拥而眠，只不过我还没有跟其他人一起睡过，不太找得到姿势。好几个动作会压到她的头发，扯疼她。换了好几个姿势，有的姿势。距离有点远，我不太满足；有的姿势，又太近，有点热；有的姿势压的我手有点麻；有的姿势，压得她有点难受。不过我还是迷迷糊糊的睡着了，不知道过了多久突然从梦中惊醒，我梦到她走了。我急忙转头去确认她的位置，很幸运，我又闻到了熟悉的味道，那种安心感又回来了。</p>
+            <p>时间到了早上 7:30，我的闹钟响了。今天我要上班，不得不起床。她今天休息，可以多休息一会儿。我先是漱口，烧热水，然后拿上内裤和毛巾去洗个澡，顺便把胡子刮了。洗完的以后，正好把茶泡上。我想。早上醒来的时候一杯蜂蜜花茶，也许会不错。这一些做完。床上的她已经有点醒了，可惜我的动作大概还是不够轻，噪声有点大。假期就是应该多睡一会儿，不是吗？</p>
+            <p>不过既然醒了，我倒是，又想亲亲她了。</p>
+            <p>嘿嘿，她满足了我的愿望。我感觉这一下补充的能量可以让我充满活力的干一整天。</p>
+            <p>她过来以后一直穿着全套衣服。其实我想，她这样睡着可能会有些难受，这几个小时，她大概是没有休息好的。</p>
+            <p>希望我去上班之后，她能再睡一个回笼觉。</p>
+          </div>
+        </div>
+
+      </div><!-- /#love-content -->
+
+    </div><!-- /#panel-love -->
 
   </main>
 
